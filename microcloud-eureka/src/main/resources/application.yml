@@ -1,0 +1,19 @@
+server:
+  port: 7001
+eureka:
+  instance: # eureka实例
+    hostname: eureka1             # eureka实例主机名
+  client:
+    fetch-registry: false # 是否从Eureka获取注册信息
+    register-with-eureka: false #是否需要注册到注册中心（Eureka）
+    service-url:
+      defaultZone: http://tyb:tyb1222@eureka1:7001/eureka,http://tyb:tyb1222@eureka2:7002/eureka
+  server:
+    eviction-interval-timer-in-ms: 1000  # 设置清洗时间间隔（单位:毫秒）.默认60 秒
+    enable-self-preservation: false  #设置为False表示关闭保护模式。保护模式：如某个服务掉线，中心中心并没有清空服务（可能服务由于网络原因掉线）
+
+spring:
+  security:
+    user:
+      name: tyb
+      password: tyb1222

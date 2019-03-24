@@ -1,0 +1,18 @@
+server:
+  port: 7002
+eureka:
+  instance:
+    hostname: eureka2
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://tyb:tyb1222@eureka1:7001/eureka,http://tyb:tyb1222@eureka2:7002/eureka
+  server:
+    eviction-interval-timer-in-ms: 1000
+    enable-self-preservation: false
+spring:
+  security:
+    user:
+      name: tyb
+      password: tyb1222

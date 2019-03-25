@@ -5,7 +5,6 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -13,14 +12,13 @@ import org.springframework.web.client.RestTemplate;
 import javax.annotation.Resource;
 
 @RestController
-@RequestMapping("/index")
-public class IndexController {
-    private static final String PRODUCT_GET = "http://127.0.0.1:8080/product/get/";
-    private static final String PRODUCT_ALL = "http://127.0.0.1:8080/product/all";
-    private static final String PRODUCT_CREATE = "http://127.0.0.1:8080/product/create";
+@RequestMapping("/indexEureka")
+public class IndexEurekaController {
+    private static final String PRODUCT_GET = "http://MICROCLOUD-PRODUCT-SERVER/product/get/";
+    private static final String PRODUCT_ALL = "http://MICROCLOUD-PRODUCT-SERVER/product/all";
+    private static final String PRODUCT_CREATE = "http://MICROCLOUD-PRODUCT-SERVER/product/create";
 
     @Resource
-    @LoadBalanced
     private RestTemplate restTemplate;
 
     @Resource

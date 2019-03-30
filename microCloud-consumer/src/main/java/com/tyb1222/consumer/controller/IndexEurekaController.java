@@ -1,7 +1,10 @@
 package com.tyb1222.consumer.controller;
 
 import com.tyb1222.api.vo.Product;
+import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -24,8 +27,14 @@ public class IndexEurekaController {
     @Resource
     private HttpHeaders httpHeaders;
 
+    @Resource
+    private LoadBalancerClient loadBalancerClient;
+
     @RequestMapping("/product/get")
     public Object getProduct(long id) {
+        String serviceId = "MICROCLOUD-PRODUCT-SERVER";
+        ServiceInstance serviceInstance = loadBalancerClient.choose(serviceId);
+        System.out.println(serviceInstance);
         Object product = restTemplate.exchange(PRODUCT_GET + id,
                 HttpMethod.GET, new HttpEntity<Product>(httpHeaders), Product.class).getBody();
         return product;

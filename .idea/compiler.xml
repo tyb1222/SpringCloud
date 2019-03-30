@@ -6,13 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="microCloud-consumer-fegin" />
+        <module name="microCloud-consumer-ribbon" />
+        <module name="microCloud-provider-product01" />
         <module name="microCloudapi" />
         <module name="microCloudconsumer" />
         <module name="microcloudeureka" />
         <module name="microCloudeureka01" />
+        <module name="microCloudfeginservice" />
         <module name="microCloudproviderproduct" />
         <module name="microCloudsecurity" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="microCloudconsumerfeign" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

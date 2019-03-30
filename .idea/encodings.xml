@@ -4,8 +4,12 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microCloud-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microCloud-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microCloud-consumer-feign" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microCloud-consumer-ribbon" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microCloud-eureka01" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microCloud-fegin-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microCloud-provider-product" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microCloud-provider-product01" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microCloud-security" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microcloud-eureka" charset="UTF-8" />
   </component>

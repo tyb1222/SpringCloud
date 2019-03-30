@@ -1,8 +1,21 @@
 server:
-  port: 8081
+  port: 8089
 eureka:
   client:
     service-url:
       defaultZone: http://tyb:tyb1222@eureka1:7001/eureka,http://tyb:tyb1222@eureka2:7002/eureka
     register-with-eureka: false
 
+feign:
+  compression:
+    request:
+      enabled: true
+      mime-type:
+        - text/xml
+        - application/xml
+        - application/json
+      min-request-size: 2048
+
+logging:
+  level:
+    com.tyb1222.fegin.service: debug

@@ -1,0 +1,7 @@
+server:
+  port: 10101
+eureka:
+  client:
+    service-url:
+      defaultZone: http://tyb:tyb1222@eureka1:7001/eureka,http://tyb:tyb1222@eureka2:7002/eureka
+    register-with-eureka: false

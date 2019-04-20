@@ -1,0 +1,52 @@
+server:
+  port: 9080
+mybatis:
+  mapper-locations:
+  - classpath:mapping/*.xml
+#mybatis:
+#  type-aliases-package: learning.model
+#  mapper-locations: classpath:mapping/*.xml
+#  config-location: classpath:mybatis.xml
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springcloud?serverTimezone=UTC
+    username: root
+    password: root
+#  security:
+#    user:
+#      name: tyb
+#      password: tyb1222
+#      roles:
+#      - USER
+    #logging:
+    ##  level: debug
+  application:
+    name: MICROCLOUD-PRODUCT-SERVER
+
+#  com.tyb1222.provider.mapper: debug
+
+eureka:
+  client:
+    service-url:
+#      defaultZone: http://localhost:7002/eureka
+      defaultZone: http://tyb:tyb1222@eureka1:7001/eureka,http://tyb:tyb1222@eureka2:7002/eureka
+  instance:
+    instance-id: PRODUCT-SERVICE
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 10  # 心跳时间间隔 ，用于与Eureka中心心跳检查。不建议设置。心跳太频繁，增加服务负担
+    lease-renewal-interval-in-seconds: 2 # 如果超过5秒间隔。超过多久没有心跳
+info:
+  app-name: microcloud-product-service
+  company.name: tyb
+  build.artifactId: $project.artifactId$
+  build.modelVersion: $project.modelVersion$
+
+
+management: # Spring Cloud 2 hystrix dashboard 需要加此配置
+  endpoints:
+    web:
+      exposure:
+        include: '*'

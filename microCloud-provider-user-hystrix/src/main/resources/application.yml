@@ -1,0 +1,30 @@
+server:
+  port: 8090
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://tyb:tyb1222@eureka1:7001/eureka,http://tyb:tyb1222@eureka2:7002/eureka
+  instance:
+    instance-id: USER-SERVICE
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 2
+    lease-expiration-duration-in-seconds: 10
+info:
+  app-name: microcloud-user-service
+  company.name: tyb
+  build.artifactId: $project.artifactId$
+  build.modelVersion: $project.modelVersion$
+
+
+spring:
+  application:
+    name: MICROCLOUD-USER-SERVICE
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

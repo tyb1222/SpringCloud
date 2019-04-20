@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 mybatis:
   mapper-locations:
   - classpath:mapping/*.xml
@@ -11,7 +11,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/springcloud?serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/springcloud1?serverTimezone=UTC
     username: root
     password: root
 #  security:
@@ -23,7 +23,7 @@ spring:
     #logging:
     ##  level: debug
   application:
-    name: MICROCLOUD-PRODUCT-SERVER  # eureka 中的服务器名
+    name: MICROCLOUD-PRODUCT-SERVER
 
 #  com.tyb1222.provider.mapper: debug
 
@@ -33,7 +33,7 @@ eureka:
 #      defaultZone: http://localhost:7002/eureka
       defaultZone: http://tyb:tyb1222@eureka1:7001/eureka,http://tyb:tyb1222@eureka2:7002/eureka
   instance:
-    instance-id: PRODUCT-SERVICE
+    instance-id: PRODUCT-SERVICE1
     prefer-ip-address: true
     lease-expiration-duration-in-seconds: 10  # 心跳时间间隔 ，用于与Eureka中心心跳检查。不建议设置。心跳太频繁，增加服务负担
     lease-renewal-interval-in-seconds: 2 # 如果超过5秒间隔。超过多久没有心跳

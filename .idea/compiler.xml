@@ -7,19 +7,28 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="microCloud-consumer-fegin" />
+        <module name="microCloud-consumer-feign-hystrix" />
         <module name="microCloud-consumer-ribbon" />
+        <module name="microCloud-fegin-service-hystix" />
+        <module name="microCloud-provider-product-hystrix" />
         <module name="microCloud-provider-product01" />
         <module name="microCloudapi" />
         <module name="microCloudconsumer" />
+        <module name="microCloudconsumerturbine" />
         <module name="microcloudeureka" />
         <module name="microCloudeureka01" />
         <module name="microCloudfeginservice" />
+        <module name="microCloudhystrixdashboard" />
         <module name="microCloudproviderproduct" />
+        <module name="microCloudprovideruserhystrix" />
         <module name="microCloudsecurity" />
+        <module name="microCloudzuul" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="microCloud-turbine" target="1.8" />
       <module name="microCloudconsumerfeign" target="1.8" />
+      <module name="microCloudturbine" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

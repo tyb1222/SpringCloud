@@ -1,0 +1,45 @@
+server:
+  port: 9501
+eureka:
+  client:
+    service-url:
+      defaultZone: http://tyb:tyb1222@eureka1:7001/eureka,http://tyb:tyb1222@eureka2:7002/eureka
+    register-with-eureka: true
+  instance:
+    instance-id: microCloud-zuul
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 2    #设置心跳时间间隔
+    lease-expiration-duration-in-seconds: 5 #过期时间间隔
+
+
+spring:
+  application:
+    name: microCloud-zuul
+  security:
+    user:
+      password: tyb1222
+      name: tyb
+# 方式一
+#zuul:
+#  routes:
+#    microcloud-user-service: /user-proxy/**
+#  ignored-services: "*"
+#方式二 .users 是逻辑名称将path，serviceId绑定
+#zuul:
+#  routes:
+#    users.path: /user-proxy/**
+#    users.serviceId: microcloud-user-service
+#  ignored-services: "*"
+#方式三
+
+zuul:
+  routes:
+   users:
+     path: /user-proxy/**
+#     serviceId: microcloud-user-service
+     serviceId: MICROCLOUD-USER-SERVICE
+   users2:
+     path: /user-proxy2/**
+     url: http://localhost:8090/
+  ignored-services: "*"
+  prefix: "/springCloud"

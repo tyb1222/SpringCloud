@@ -1,0 +1,10 @@
+server:
+  port: 9101
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://tyb:tyb1222@eureka1:7001/eureka,http://tyb:tyb1222@eureka2:7002/eureka
+turbine:
+  app-config: MICROCLOUD-PRODUCT-SERVER,MICROCLOUD-USER-SERVICE
+  cluster-name-expression: new String("default")

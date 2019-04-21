@@ -1,4 +1,4 @@
-package com.tyb1222.fallback;
+package com.tyb1222.service.fallback;
 
 import com.tyb1222.api.vo.Product;
 import com.tyb1222.api.vo.User;

@@ -5,3 +5,6 @@ eureka:
     service-url:
       defaultZone: http://tyb:tyb1222@eureka1:7001/eureka,http://tyb:tyb1222@eureka2:7002/eureka
     register-with-eureka: false
+feign:
+  hystrix:
+    enabled: true

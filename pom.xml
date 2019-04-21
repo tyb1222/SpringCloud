@@ -28,9 +28,10 @@
         <module>microCloud-hystrix-dashboard</module>
         <module>microCloud-provider-user-hystrix</module>
         <module>microCloud-provider-user-hystrix</module>
-        <module>microCloud-turbine</module>
         <module>microCloud-consumer-turbine</module>
         <module>microCloud-zuul</module>
+        <module>microCloud-zuul-feign</module>
+        <module>microCloud-consumer-zuul-feign</module>
     </modules>
 
     <properties>

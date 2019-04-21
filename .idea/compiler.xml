@@ -15,6 +15,7 @@
         <module name="microCloudapi" />
         <module name="microCloudconsumer" />
         <module name="microCloudconsumerturbine" />
+        <module name="microCloudconsumerzuulfeign" />
         <module name="microcloudeureka" />
         <module name="microCloudeureka01" />
         <module name="microCloudfeginservice" />
@@ -23,6 +24,7 @@
         <module name="microCloudprovideruserhystrix" />
         <module name="microCloudsecurity" />
         <module name="microCloudzuul" />
+        <module name="microCloudzuulfeign" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

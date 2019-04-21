@@ -15,10 +15,10 @@ eureka:
 spring:
   application:
     name: microCloud-zuul
-  security:
-    user:
-      password: tyb1222
-      name: tyb
+#  security:
+#    user:
+#      password: tyb1222
+#      name: tyb
 # 方式一
 #zuul:
 #  routes:
@@ -41,5 +41,8 @@ zuul:
    users2:
      path: /user-proxy2/**
      url: http://localhost:8090/
+   product:
+     path: /product-proxy/**
+     serviceId: MICROCLOUD-PRODUCT-SERVER
   ignored-services: "*"
   prefix: "/springCloud"

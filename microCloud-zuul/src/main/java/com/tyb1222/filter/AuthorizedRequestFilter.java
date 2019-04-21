@@ -21,11 +21,11 @@ public class AuthorizedRequestFilter extends ZuulFilter {
 
     @Override
     public boolean shouldFilter() {
-        return false;
+        return true;
     }
 
     @Override
-    public Object run() throws ZuulException {
+    public Object run() {
         RequestContext context = RequestContext.getCurrentContext();
         String auth = "tyb:1";
         byte [] encodeAuth = Base64.getEncoder().encode(auth.getBytes(Charset.forName("US-ASCII")));

@@ -21,4 +21,4 @@ zuul:
   prefix: "/springCloud"
 spring:
   application:
-    name: microCloud-zuul
+    name: microCloud-zuul # zuul 在eureka中的名字。后续feign 通过次名字调用

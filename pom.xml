@@ -32,6 +32,7 @@
         <module>microCloud-zuul</module>
         <module>microCloud-zuul-feign</module>
         <module>microCloud-consumer-zuul-feign</module>
+        <module>microCloud-zuul-ha01</module>
     </modules>
 
     <properties>

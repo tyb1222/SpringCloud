@@ -1,0 +1,24 @@
+server:
+  port: 9502
+eureka:
+  client:
+    service-url:
+      defaultZone: http://tyb:tyb1222@eureka1:7001/eureka,http://tyb:tyb1222@eureka2:7002/eureka
+    register-with-eureka: true
+  instance:
+    instance-id: microCloud-zuulHa
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 2
+    lease-expiration-duration-in-seconds: 5
+
+
+zuul:
+  ignored-services: "*"
+  routes:
+    user:
+      path: "/user-proxy/**"
+      serviceId: MICROCLOUD-USER-SERVICE
+  prefix: "/springCloud"
+spring:
+  application:
+    name: microCloud-zuul

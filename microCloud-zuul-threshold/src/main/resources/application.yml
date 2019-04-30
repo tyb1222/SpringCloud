@@ -1,0 +1,54 @@
+server:
+  port: 9503
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+     defaultZone: http://tyb:tyb1222@eureka1:7001/eureka,http://tyb:tyb1222@eureka2:7002/eureka
+
+zuul:
+  ignored-services: "*"
+  routes:
+    user:
+      path: "/user-proxy/**"
+      serviceId: "MICROCLOUD-USER-SERVICE"
+  prefix: "/springCloud"
+  ratelimit:
+    enabled: true
+    behind-proxy: true
+    repository: REDIS
+    default-policy:
+      limit: 2
+      quota: 4
+      refresh-interval: 60
+      type:
+        - url
+
+
+#    key-prefix: MICROCLOUD-USER-SERVICE
+#    enabled: true
+#    repository: REDIS
+#    behind-proxy: true
+#    policies:
+#      MICROCLOUD-USER-SERVICE:
+#        limit: 2
+#        quota: 1
+#        refresh-interval: 3
+
+
+spring:
+  application:
+    name: microCloud-zuul-threshold
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    pool:
+      max-active: 8
+      max-idle: 8
+      max-wait: -1
+      min-idle: 0
+
+
